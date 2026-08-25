@@ -1,4 +1,10 @@
-const API_BASE = "http://127.0.0.1:2200";
+(()  =>  {
+
+
+
+
+
+const API_BASE = "https://mental-health-score-ipp4.onrender.com";
 
 const form = document.getElementById("wellnessForm");
 const submitBtn = document.getElementById("submitBtn");
@@ -143,4 +149,5 @@ overlay.addEventListener("click", (e) => {
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && !overlay.hidden) hideResult();
-});
+ });
+})();
