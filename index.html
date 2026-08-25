@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mental Health Score </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <!-- LEFT: HERO -->
+  <aside class="hero">
+    <div class="hero__eyebrow">Student Wellbeing Study</div>
+    <h1 class="hero__title">How's your<br><em>Mental Health Score?</em></h1>
+    <p class="hero__copy">
+      Screen time, sleep, stress, focus — they all pull on the same thread.
+      Answer a few honest questions and we'll estimate where you land.
+    </p>
+
+    <svg class="hero__wave" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path id="wavePath" d="M0,60 C 40,20 80,100 120,60 C 160,20 200,100 240,60 C 260,40 280,60 320,60"
+            stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+      <circle r="4" fill="var(--primary)">
+        <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#wavePath"/>
+        </animateMotion>
+      </circle>
+    </svg>
+
+    <div class="hero__foot">
+      <span class="dot"></span> model served locally &middot; predictions are estimates, not diagnoses
+    </div>
+  </aside>
+
+  <!-- RIGHT: FORM -->
+  <main class="panel">
+    <form id="wellnessForm" class="form" novalidate>
+
+      <section class="form__group">
+        <h2 class="form__legend">01 — About you</h2>
+        <div class="grid grid--3">
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="10" max="100" placeholder="20" required>
+          </div>
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select</option>
+              <option value="Male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" placeholder="India" required>
+          </div>
+        </div>
+        <div class="grid grid--1">
+          <div class="field">
+            <label for="academic_level">Academic level</label>
+            <select id="academic_level" name="academic_level" required>
+              <option value="" disabled selected>Select</option>
+              <option value="High School">High School</option>
+              <option value="Undergraduate">Undergraduate</option>
+              <option value="Graduate">Graduate</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="form__group">
+        <h2 class="form__legend">02 — Your platform</h2>
+        <div class="grid grid--2">
+          <div class="field">
+            <label for="most_used_platform">Most-used platform</label>
+            <select id="most_used_platform" name="most_used_platform" required>
+              <option value="" disabled selected>Select</option>
+              <option>Facebook</option>
+              <option>LinkedIn</option>
+              <option>Instagram</option>
+              <option>Snapchat</option>
+              <option>Twitter</option>
+              <option>YouTube</option>
+              <option>TikTok</option>
+              <option>LINE</option>
+              <option>KakaoTalk</option>
+              <option>VKontakte</option>
+              <option>WhatsApp</option>
+              <option>WeChat</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="purpose_of_use">Main purpose</label>
+            <select id="purpose_of_use" name="purpose_of_use" required>
+              <option value="" disabled selected>Select</option>
+              <option>Networking</option>
+              <option>Education</option>
+              <option>Entertainment</option>
+              <option>News</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="form__group">
+        <h2 class="form__legend">03 — Your daily rhythm</h2>
+        <div class="grid grid--2">
+          <div class="field">
+            <label for="avg_daily_usage_hours">Avg. daily screen time <span class="unit">hrs</span></label>
+            <input type="number" id="avg_daily_usage_hours" name="avg_daily_usage_hours" min="0" max="24" step="0.1" placeholder="4.5" required>
+          </div>
+          <div class="field">
+            <label for="daily_unlocks">Phone unlocks <span class="unit">per day</span></label>
+            <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" step="1" placeholder="60" required>
+          </div>
+          <div class="field">
+            <label for="study_hours">Study time <span class="unit">hrs</span></label>
+            <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" placeholder="3" required>
+          </div>
+          <div class="field">
+            <label for="physical_activity_hours">Physical activity <span class="unit">hrs</span></label>
+            <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="24" step="0.1" placeholder="1" required>
+          </div>
+          <div class="field">
+            <label for="sleep_hours_per_night">Sleep <span class="unit">hrs / night</span></label>
+            <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" placeholder="7" required>
+          </div>
+          <div class="field">
+            <label for="stress_level">Stress level</label>
+            <select id="stress_level" name="stress_level" required>
+              <option value="" disabled selected>Select</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Very High</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <div id="formError" class="form-error" role="alert" hidden></div>
+
+      <button type="submit" id="submitBtn" class="submit-btn">
+        <span class="submit-btn__label">Check my score </span>
+        <svg class="submit-btn__spinner" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke-width="3"/>
+        </svg>
+      </button>
+    </form>
+  </main>
+</div>
+
+<!-- RESULT OVERLAY -->
+<div id="resultOverlay" class="overlay" hidden>
+  <div class="result-card">
+    <button id="closeResult" class="result-card__close" aria-label="Close result">&times;</button>
+
+    <p class="result-card__eyebrow" id="resultZoneLabel">Balanced</p>
+
+    <div class="gauge-wrap">
+      <svg id="gaugeSvg" viewBox="0 0 220 130" aria-hidden="true">
+        <path class="gauge-track" d="M20,120 A90,90 0 0 1 200,120" />
+        <path class="gauge-fill" id="gaugeFill" d="M20,120 A90,90 0 0 1 200,120" />
+      </svg>
+      <div class="gauge-number">
+        <span id="scoreValue">--</span>
+        <small>/ 10</small>
+      </div>
+    </div>
+
+    <p class="result-card__note" id="resultNote">
+      This is a model estimate based on the habits you shared — not a clinical assessment.
+    </p>
+
+    <button id="tryAgainBtn" class="result-card__retry">Run another check</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
